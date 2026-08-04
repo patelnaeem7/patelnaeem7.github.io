@@ -9,6 +9,7 @@ const types = new Map([
   ['.css', 'text/css; charset=utf-8'],
   ['.html', 'text/html; charset=utf-8'],
   ['.js', 'text/javascript; charset=utf-8'],
+  ['.jpg', 'image/jpeg'],
   ['.json', 'application/json; charset=utf-8'],
   ['.pdf', 'application/pdf'],
   ['.png', 'image/png'],

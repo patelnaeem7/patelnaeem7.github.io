@@ -39,7 +39,7 @@ Complete every item below before publishing the portfolio as a production site.
 
 ## Domain and SEO metadata
 
-The intended domain, `https://naeem-patel.is-a.dev/`, redirected to the is-a.dev availability page during the 4 August 2026 audit. Keep the documented `example.com` values until the domain serves this portfolio, then replace every occurrence together.
+Social-sharing metadata currently uses the active staging origin, `https://patelnaeem7.github.io/`. After `https://naeem-patel.is-a.dev/` becomes active, replace the staging origin with the final domain in `og:url`, `og:image`, `og:image:secure_url`, `twitter:image`, the canonical URL, the JSON-LD URLs, every sitemap URL and the `robots.txt` sitemap reference. Update these together so sharing, canonical and structured-data signals stay aligned.
 
 - [ ] Replace every `https://example.com/` occurrence in `index.html`.
 - [ ] Replace the `ProfilePage.url` and `Person.url` placeholders in the JSON-LD block in `index.html`.
