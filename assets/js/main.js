@@ -7,7 +7,7 @@
     linkedin: 'https://www.linkedin.com/in/patelnaeem',
     github: 'https://github.com/patelnaeem7',
     cv: 'assets/documents/naeem-patel-cv.pdf',
-    canonicalUrl: 'https://example.com/'
+    canonicalUrl: 'https://naeem-patel.is-a.dev/'
   });
 
   window.updateBodyLock = () => {
