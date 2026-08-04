@@ -99,6 +99,8 @@
 
   const tabs = [...showcase.querySelectorAll('[data-project-index]')];
   const panel = showcase.querySelector('[data-project-panel]');
+  const reducedMotion = typeof window.matchMedia === 'function' &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const fields = {
     image: showcase.querySelector('[data-project-image]'),
     number: showcase.querySelector('[data-project-number]'),
@@ -147,7 +149,13 @@
     setText(fields.outcome, project.outcome);
 
     if (focusTab) tabs[safeIndex].focus();
-    if (scrollTab) tabs[safeIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    if (scrollTab) {
+      tabs[safeIndex].scrollIntoView({
+        behavior: reducedMotion ? 'auto' : 'smooth',
+        block: 'nearest',
+        inline: 'center'
+      });
+    }
     showcase.dispatchEvent(new CustomEvent('portfolio:projectchange', { detail: { index: safeIndex } }));
   };
 

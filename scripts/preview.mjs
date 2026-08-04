@@ -1,6 +1,6 @@
 import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
-import { extname, join, normalize } from 'node:path';
+import { extname, isAbsolute, join, normalize, relative, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = normalize(join(fileURLToPath(new URL('.', import.meta.url)), '..'));
@@ -14,6 +14,7 @@ const types = new Map([
   ['.svg', 'image/svg+xml'],
   ['.txt', 'text/plain; charset=utf-8'],
   ['.webmanifest', 'application/manifest+json; charset=utf-8'],
+  ['.webp', 'image/webp'],
   ['.xml', 'application/xml; charset=utf-8']
 ]);
 
@@ -22,8 +23,11 @@ createServer(async (request, response) => {
     const pathname = decodeURIComponent(new URL(request.url, 'http://localhost').pathname);
     const relativePath = pathname === '/' ? 'index.html' : pathname.replace(/^\/+/, '');
     let filePath = normalize(join(root, relativePath));
+    const pathFromRoot = relative(root, filePath);
 
-    if (!filePath.startsWith(root)) throw new Error('Unsafe path');
+    if (pathFromRoot === '..' || pathFromRoot.startsWith(`..${sep}`) || isAbsolute(pathFromRoot)) {
+      throw new Error('Unsafe path');
+    }
     if ((await stat(filePath)).isDirectory()) filePath = join(filePath, 'index.html');
 
     const body = await readFile(filePath);
@@ -45,4 +49,3 @@ createServer(async (request, response) => {
 }).listen(port, '127.0.0.1', () => {
   console.log(`Portfolio preview: http://127.0.0.1:${port}/`);
 });
-

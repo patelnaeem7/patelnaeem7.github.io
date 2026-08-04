@@ -5,6 +5,7 @@
   const showcase = document.querySelector('[data-project-showcase]');
   const openButton = document.querySelector('[data-open-case-study]');
   const closeButton = dialog?.querySelector('[data-close-dialog]');
+  const dialogScroller = dialog?.querySelector('.case-dialog__chrome');
   let opener = null;
 
   if (!dialog || !showcase || !openButton) return;
@@ -64,8 +65,8 @@
     if (links) {
       links.replaceChildren();
       [
-        { label: 'View repository', placeholder: 'GitHub link — add URL', url: project.repositoryUrl },
-        { label: 'View live project', placeholder: 'Live project — add URL', url: project.liveUrl }
+        { label: 'View repository', placeholder: 'Repository not publicly available', url: project.repositoryUrl },
+        { label: 'View live project', placeholder: 'Live project not publicly available', url: project.liveUrl }
       ].forEach((item) => {
         if (item.url) {
           const link = document.createElement('a');
@@ -79,7 +80,6 @@
         }
         const placeholder = document.createElement('span');
         placeholder.className = 'case-link is-placeholder';
-        placeholder.setAttribute('aria-disabled', 'true');
         placeholder.textContent = item.placeholder;
         links.append(placeholder);
       });
@@ -91,6 +91,7 @@
     if (!active) return;
     opener = document.activeElement;
     populateDialog(active.project);
+    if (dialogScroller) dialogScroller.scrollTop = 0;
     document.body.classList.add('is-dialog-open');
     window.updateBodyLock?.();
     if (typeof dialog.showModal === 'function') dialog.showModal();

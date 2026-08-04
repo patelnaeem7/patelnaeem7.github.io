@@ -1,14 +1,12 @@
 (() => {
   'use strict';
 
-  document.documentElement.classList.add('js');
-
   // Replace these launch values in one place. See docs/CONTENT-CHECKLIST.md.
   window.PORTFOLIO_CONFIG = Object.freeze({
     email: 'naeem.patel.dev@gmail.com',
     linkedin: 'https://www.linkedin.com/in/patelnaeem',
     github: 'https://github.com/patelnaeem7',
-    cv: '',
+    cv: 'assets/documents/naeem-patel-cv.pdf',
     canonicalUrl: 'https://example.com/'
   });
 
@@ -22,6 +20,7 @@
   if (year) year.textContent = String(new Date().getFullYear());
 
   const linkStatus = document.querySelector('[data-link-status]');
+  const placeholderNote = document.querySelector('#placeholder-note');
   const linkMap = {
     email: window.PORTFOLIO_CONFIG.email ? `mailto:${window.PORTFOLIO_CONFIG.email}` : '',
     linkedin: window.PORTFOLIO_CONFIG.linkedin,
@@ -39,6 +38,7 @@
       return;
     }
 
+    if (placeholderNote) placeholderNote.hidden = false;
     link.setAttribute('aria-describedby', 'placeholder-note');
     link.addEventListener('click', (event) => {
       event.preventDefault();
@@ -98,4 +98,3 @@
     });
   }
 })();
-

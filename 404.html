@@ -6,7 +6,28 @@
   <title>Page not found | Naeem Patel</title>
   <meta name="description" content="The requested page could not be found. Return to Naeem Patel's portfolio.">
   <meta name="robots" content="noindex">
-  <meta name="theme-color" content="#F4F3EE">
+  <base href="/">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f4f3ee">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#10110f">
+  <script>
+    // Keep this tiny script in the head so the correct theme is applied before first paint.
+    (() => {
+      try {
+        const root = document.documentElement;
+        const stored = window.localStorage.getItem('naeem-portfolio-theme');
+        const theme = stored === 'light' || stored === 'dark'
+          ? stored
+          : (window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        root.dataset.theme = theme;
+        document.querySelectorAll('meta[name="theme-color"]').forEach((meta) => {
+          meta.content = theme === 'dark' ? '#10110f' : '#f4f3ee';
+        });
+        root.classList.add('js');
+      } catch {
+        document.documentElement.classList.add('js');
+      }
+    })();
+  </script>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,6 +46,6 @@
     <p>The portfolio is still exactly where it should be. Head back to the main page to explore selected work and capabilities.</p>
     <a class="button button--accent" href="index.html">Return to the portfolio <span aria-hidden="true">→</span></a>
   </main>
+  <script src="assets/js/theme.js" defer></script>
 </body>
 </html>
-

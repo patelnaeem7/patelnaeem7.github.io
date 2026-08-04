@@ -8,6 +8,7 @@ html {
   background: var(--colour-canvas);
   scroll-behavior: smooth;
   scroll-padding-top: 6.5rem;
+  scrollbar-color: var(--colour-border-strong) var(--colour-canvas);
 }
 
 body {
@@ -41,6 +42,37 @@ input,
 textarea,
 select {
   font: inherit;
+}
+
+input,
+textarea,
+select {
+  border: 1px solid var(--colour-border-strong);
+  border-radius: var(--radius-sm);
+  color: var(--colour-ink);
+  background: var(--colour-surface-raised);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--colour-muted);
+  opacity: 1;
+}
+
+input:disabled,
+textarea:disabled,
+select:disabled,
+button:disabled,
+[aria-disabled="true"] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+input[aria-invalid="true"],
+textarea[aria-invalid="true"],
+select[aria-invalid="true"] {
+  border-color: var(--colour-invalid);
+  background: var(--colour-invalid-soft);
 }
 
 button,
@@ -97,6 +129,21 @@ ol {
 :focus-visible {
   outline: 3px solid var(--colour-focus);
   outline-offset: 4px;
+}
+
+::-webkit-scrollbar {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--colour-canvas);
+}
+
+::-webkit-scrollbar-thumb {
+  border: 0.2rem solid var(--colour-canvas);
+  border-radius: 999px;
+  background: var(--colour-border-strong);
 }
 
 [hidden] {
@@ -184,6 +231,11 @@ ol {
 .section-heading--split > p {
   max-width: 39rem;
   color: var(--colour-muted);
+}
+
+.theme-ready body,
+.theme-ready :where(.header-inner, .mobile-menu, .hero-composition, .interface-window, .capability-strip, .expertise, .experience, .about, .contact, .site-footer, .error-card, input, textarea, select) {
+  transition: color var(--transition-theme), background-color var(--transition-theme), border-color var(--transition-theme), box-shadow var(--transition-theme);
 }
 
 .reveal {

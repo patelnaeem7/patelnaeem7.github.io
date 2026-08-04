@@ -59,7 +59,7 @@
     border-right: 0;
     border-bottom: 1px solid var(--colour-line-dark);
     scroll-snap-type: x mandatory;
-    scrollbar-color: #55595f var(--colour-dark);
+    scrollbar-color: var(--colour-link-underline-dark) var(--colour-dark);
   }
 
   .project-tabs button {
@@ -120,7 +120,7 @@
   }
 
   .desktop-nav,
-  .header-cv {
+  .header-actions {
     display: none;
   }
 
@@ -455,4 +455,3 @@
     transform: none !important;
   }
 }
-

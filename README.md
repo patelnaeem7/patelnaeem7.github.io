@@ -11,7 +11,7 @@ The project is intentionally dependency-free: there is no package manager, frame
 - Vanilla JavaScript and native browser APIs
 - `IntersectionObserver` for progressive entrance and active-section enhancement
 - Native `<dialog>` for accessible case studies
-- Local SVG interface and portrait placeholders
+- Local SVG interface placeholders and an optimised WebP portrait
 - JSON-LD, Open Graph, sitemap, robots and web-manifest metadata
 
 ## File structure
@@ -33,6 +33,7 @@ The project is intentionally dependency-free: there is no package manager, frame
 │   │   ├── sections.css
 │   │   └── responsive.css
 │   ├── js/
+│   │   ├── theme.js
 │   │   ├── main.js
 │   │   ├── navigation.js
 │   │   ├── projects.js
@@ -77,9 +78,9 @@ window.PORTFOLIO_CONFIG = Object.freeze({
 });
 ```
 
-Copy the final PDF to `assets/documents/naeem-patel-cv.pdf`. Until values are added, placeholder contact and CV actions are intercepted and explained to the visitor rather than opening a broken destination.
+The repository currently includes `assets/documents/naeem-patel-cv.pdf`, and the public email, LinkedIn and GitHub destinations are configured. Confirm that the PDF is the final proofread version before release. If any configuration value is intentionally left empty later, the related action is intercepted and explained instead of opening a broken destination.
 
-The canonical URL is also present in HTML and SEO files; use the checklist below to update every launch occurrence.
+The canonical URL is also present in HTML and SEO files. The intended custom domain is `https://naeem-patel.is-a.dev/`, but it was not serving this portfolio at the 4 August 2026 audit, so the documented `example.com` placeholders remain until the domain is activated. Use the checklist below to update every launch occurrence together after activation.
 
 ### Text content
 
@@ -101,7 +102,7 @@ The four tab labels are intentionally present in `index.html` so they remain nav
 
 Replace project files in `assets/images/projects/` with genuine screenshots. You may keep the filenames to avoid code changes, or change each project object's `image` path. Prefer responsive AVIF or WebP exports for photographic or screenshot-heavy assets, preserve a 3:2 source ratio where possible, and keep accurate alt text.
 
-Replace `assets/images/placeholders/portrait-placeholder.svg` with an optimised professional portrait and update the `src`, dimensions and alt text in `index.html`.
+The current professional portrait is stored at `assets/images/placeholders/portrait-placeholder.webp`. If it is replaced, keep the image optimised and update the `src`, dimensions and alt text in `index.html` when necessary.
 
 Replace `assets/images/placeholders/social-preview.svg` with a final 1200 × 630 social image, then update the Open Graph and Twitter/X image URLs in `index.html`.
 
@@ -110,6 +111,29 @@ Replace `assets/images/placeholders/social-preview.svg` with a final 1200 × 630
 Colours, typography, spacing, page width, radii and motion timing are centralised in `assets/css/tokens.css`. Component-level behaviour lives in `components.css`, larger page compositions live in `sections.css`, and breakpoint changes live in `responsive.css`.
 
 The signal-green colour is used selectively. If the palette changes, verify text/background pairs against WCAG AA before launch.
+
+### Light and dark themes
+
+The light palette is defined on `:root` in `assets/css/tokens.css`. The explicit dark palette is defined in `[data-theme="dark"]` in the same file. A matching `prefers-color-scheme: dark` block supplies the dark tokens when JavaScript is disabled and no explicit `data-theme` is present. Existing British-English `--colour-*` token names are retained consistently throughout the CSS.
+
+The small inline script in the `<head>` of `index.html` and `404.html` runs before the stylesheets. It validates the saved `naeem-portfolio-theme` value, falls back to the operating-system preference, and applies `data-theme="light"` or `data-theme="dark"` before the page can paint. It is intentionally inline and must not be deferred, otherwise a visitor can see a flash of the wrong theme.
+
+`assets/js/theme.js` handles the navigation controls after the document is parsed. It keeps desktop and mobile controls synchronised, updates their accessible labels and pressed state, updates the active browser theme colour, follows live system changes until a manual choice is made, and persists valid manual choices in `localStorage`. All storage access is guarded so blocked or unavailable storage does not prevent the control from working for the current page.
+
+To change the palette safely:
+
+1. Update semantic values in `assets/css/tokens.css`; avoid adding component-specific hex values elsewhere.
+2. Keep light values in `:root` and dark values aligned between `[data-theme="dark"]` and the no-JavaScript media-query fallback.
+3. Preserve the accent/text, body/muted text, border, focus and control-state contrast relationships.
+4. Recheck the interface collage, permanently dark editorial panels, dialog, 404 page and native form-control examples in both themes.
+
+To test a manual theme, use the navigation toggle, refresh, and open a new tab to confirm persistence. To simulate a first visit or reset the saved choice, run this in the browser console and reload:
+
+```js
+localStorage.removeItem('naeem-portfolio-theme');
+```
+
+Then switch the operating system or browser emulation between light and dark. Also repeat with JavaScript disabled to verify the CSS-only system fallback. When testing storage failure, block site storage and confirm manual switching still changes the current page without a console error.
 
 ## Deployment
 
@@ -154,7 +178,7 @@ You can also drag the repository folder into Netlify Drop for a temporary previe
 ## Pre-launch checklist
 
 - Complete every item in `docs/CONTENT-CHECKLIST.md`.
-- Replace all contact, CV, portrait, screenshot and project-link placeholders.
+- Confirm the CV is final, then replace the remaining screenshot, social-preview and project-link placeholders.
 - Replace the canonical domain in HTML, JSON-LD, `robots.txt` and `sitemap.xml`.
 - Create a final social preview image and test its crop on common platforms.
 - Verify every statement, role, date and project description with Naeem.
@@ -165,6 +189,10 @@ You can also drag the repository folder into Netlify Drop for a temporary previe
 
 ## Testing checklist
 
+- Check first-visit system detection in light and dark, then confirm both manual choices persist through refresh and a new tab.
+- Block `localStorage` and verify that the current-page toggle still works without errors.
+- Disable JavaScript and verify that `prefers-color-scheme` still controls the palette.
+- Confirm the theme-colour metadata follows the active theme and there is no wrong-theme flash on reload.
 - Check layouts at 1440, 1024, 768, 390 and 320 CSS pixels.
 - Navigate the entire page with Tab, Shift+Tab, Enter, Space and arrow keys.
 - Open and close the mobile menu using its button, a navigation choice and Escape.
