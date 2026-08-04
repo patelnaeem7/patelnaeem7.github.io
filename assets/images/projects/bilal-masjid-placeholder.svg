@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Bilal Jamia Masjid platform placeholder</title>
+  <desc id="desc">Conceptual Android prayer application shown beside a dark administration interface.</desc>
+  <defs><filter id="s"><feDropShadow dx="0" dy="22" stdDeviation="24" flood-color="#07100a" flood-opacity=".25"/></filter></defs>
+  <rect width="1200" height="800" fill="#dbe5dc"/><circle cx="211" cy="82" r="230" fill="#b9f34a" opacity=".33"/>
+  <g transform="translate(96 86)" filter="url(#s)">
+    <rect x="318" width="690" height="618" rx="22" fill="#151a17"/>
+    <rect x="318" width="690" height="52" rx="22" fill="#202622"/><path d="M318 52h690" stroke="#343b36"/>
+    <circle cx="346" cy="26" r="5" fill="#58605a"/><circle cx="365" cy="26" r="5" fill="#58605a"/><circle cx="384" cy="26" r="5" fill="#58605a"/>
+    <g transform="translate(346 87)">
+      <rect width="108" height="495" rx="12" fill="#1e2420"/><text x="23" y="34" fill="#b9f34a" font-family="Arial,sans-serif" font-size="15" font-weight="700">BJM</text>
+      <rect x="20" y="69" width="68" height="9" rx="5" fill="#b9f34a"/><rect x="20" y="105" width="50" height="8" rx="4" fill="#515953"/><rect x="20" y="139" width="57" height="8" rx="4" fill="#515953"/><rect x="20" y="173" width="46" height="8" rx="4" fill="#515953"/>
+      <g transform="translate(139)">
+        <text x="0" y="19" fill="#8f9992" font-family="Arial,sans-serif" font-size="10" letter-spacing="2">ADMINISTRATION</text>
+        <text x="0" y="55" fill="#f5f7f4" font-family="Arial,sans-serif" font-size="25" font-weight="700">Prayer schedule</text>
+        <rect y="82" width="495" height="102" rx="12" fill="#202622" stroke="#343b36"/>
+        <text x="24" y="111" fill="#929b94" font-family="Arial,sans-serif" font-size="10">TODAY</text><text x="24" y="151" fill="#f5f7f4" font-family="Arial,sans-serif" font-size="28" font-weight="700">5 schedules</text>
+        <rect x="358" y="111" width="108" height="42" rx="8" fill="#b9f34a"/><text x="412" y="137" fill="#26350b" font-family="Arial,sans-serif" font-size="11" font-weight="700" text-anchor="middle">UPDATE</text>
+        <g transform="translate(0 208)">
+          <rect width="495" height="52" rx="9" fill="#202622"/><text x="20" y="31" fill="#f5f7f4" font-family="Arial,sans-serif" font-size="12">Fajr</text><text x="446" y="31" fill="#b9f34a" font-family="Arial,sans-serif" font-size="12" text-anchor="end">06:12</text>
+          <rect y="64" width="495" height="52" rx="9" fill="#202622"/><text x="20" y="95" fill="#f5f7f4" font-family="Arial,sans-serif" font-size="12">Dhuhr</text><text x="446" y="95" fill="#b9f34a" font-family="Arial,sans-serif" font-size="12" text-anchor="end">12:45</text>
+          <rect y="128" width="495" height="52" rx="9" fill="#293329" stroke="#56684f"/><text x="20" y="159" fill="#f5f7f4" font-family="Arial,sans-serif" font-size="12">Asr</text><text x="446" y="159" fill="#b9f34a" font-family="Arial,sans-serif" font-size="12" text-anchor="end">15:24</text>
+          <rect y="192" width="495" height="52" rx="9" fill="#202622"/><text x="20" y="223" fill="#f5f7f4" font-family="Arial,sans-serif" font-size="12">Maghrib</text><text x="446" y="223" fill="#b9f34a" font-family="Arial,sans-serif" font-size="12" text-anchor="end">17:42</text>
+        </g>
+      </g>
+    </g>
+    <g transform="translate(0 34)">
+      <rect width="352" height="694" rx="52" fill="#0b0e0c"/>
+      <rect x="10" y="10" width="332" height="674" rx="44" fill="#132018"/>
+      <rect x="126" y="20" width="100" height="22" rx="11" fill="#090b09"/>
+      <text x="32" y="72" fill="#9aaa9e" font-family="Arial,sans-serif" font-size="12">Bolton · Monday</text>
+      <text x="32" y="118" fill="#f5f7f4" font-family="Arial,sans-serif" font-size="25" font-weight="700">Assalamu Alaikum</text>
+      <rect x="27" y="148" width="298" height="272" rx="24" fill="#203126"/>
+      <text x="50" y="185" fill="#9fb0a3" font-family="Arial,sans-serif" font-size="11" letter-spacing="1">UPCOMING PRAYER</text>
+      <text x="50" y="249" fill="#b9f34a" font-family="Georgia,serif" font-size="54">Asr</text>
+      <text x="50" y="284" fill="#f5f7f4" font-family="Arial,sans-serif" font-size="19">15:24</text>
+      <path d="M50 316h252" stroke="#46564a"/><text x="50" y="347" fill="#9fb0a3" font-family="Arial,sans-serif" font-size="10">STARTS IN</text><text x="50" y="384" fill="#f5f7f4" font-family="Arial,sans-serif" font-size="25" font-weight="700">01 : 28 : 14</text>
+      <text x="32" y="464" fill="#9aaa9e" font-family="Arial,sans-serif" font-size="11" letter-spacing="1">TODAY</text>
+      <g transform="translate(32 488)" font-family="Arial,sans-serif" font-size="11"><text fill="#f5f7f4">Fajr</text><text x="252" fill="#f5f7f4">06:12</text><path d="M0 21h268" stroke="#35433a"/><text y="52" fill="#f5f7f4">Dhuhr</text><text x="252" y="52" fill="#f5f7f4">12:45</text><path d="M0 73h268" stroke="#35433a"/><text y="104" fill="#b9f34a">Asr</text><text x="252" y="104" fill="#b9f34a">15:24</text></g>
+    </g>
+  </g>
+  <text x="1126" y="772" fill="#526157" font-family="Arial,sans-serif" font-size="11" text-anchor="end" letter-spacing="2">INTERFACE PLACEHOLDER</text>
+</svg>
+

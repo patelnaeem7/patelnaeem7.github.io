@@ -1,0 +1,19 @@
+{
+  "name": "Naeem Patel | Web Designer & Developer",
+  "short_name": "Naeem Patel",
+  "description": "Portfolio of Naeem Patel, a Web Designer and Developer based in Bolton, UK.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F4F3EE",
+  "theme_color": "#F4F3EE",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
+

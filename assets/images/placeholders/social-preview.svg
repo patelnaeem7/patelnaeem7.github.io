@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Naeem Patel portfolio social preview placeholder</title>
+  <desc id="desc">Editorial social card with Naeem Patel's name, title and design, build, optimise message.</desc>
+  <rect width="1200" height="630" fill="#f4f3ee"/>
+  <path d="M0 126h1200M0 252h1200M0 378h1200M0 504h1200M200 0v630M400 0v630M600 0v630M800 0v630M1000 0v630" stroke="#dfdfd8"/>
+  <circle cx="1022" cy="91" r="212" fill="#b9f34a"/>
+  <rect x="69" y="66" width="1062" height="498" rx="28" fill="#17191c"/>
+  <text x="116" y="131" fill="#b9f34a" font-family="Arial,sans-serif" font-size="22" font-weight="700">NP.</text>
+  <text x="1083" y="131" fill="#aeb2b7" font-family="Arial,sans-serif" font-size="16" text-anchor="end">BOLTON, UNITED KINGDOM</text>
+  <text x="116" y="265" fill="#f7f7f2" font-family="Arial,sans-serif" font-size="76" font-weight="700" letter-spacing="-4">Naeem Patel</text>
+  <text x="116" y="337" fill="#f7f7f2" font-family="Georgia,serif" font-size="61" font-style="italic">Web Designer &amp; Developer</text>
+  <rect x="116" y="408" width="222" height="56" rx="8" fill="#b9f34a"/><text x="227" y="443" fill="#26350b" font-family="Arial,sans-serif" font-size="15" font-weight="700" text-anchor="middle">DESIGN → BUILD</text>
+  <text x="369" y="444" fill="#aeb2b7" font-family="Arial,sans-serif" font-size="15" letter-spacing="2">OPTIMISE</text>
+  <text x="1083" y="518" fill="#777c82" font-family="Arial,sans-serif" font-size="12" text-anchor="end" letter-spacing="2">SOCIAL PREVIEW PLACEHOLDER</text>
+</svg>
+

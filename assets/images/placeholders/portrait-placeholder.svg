@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Portrait placeholder</title>
+  <desc id="desc">Abstract editorial silhouette indicating where Naeem Patel's professional portrait should be placed.</desc>
+  <rect width="800" height="1000" fill="#d9dad3"/>
+  <path d="M0 0h800v1000H0z" fill="none" stroke="#c4c6bd" stroke-width="2"/>
+  <path d="M0 200h800M0 400h800M0 600h800M0 800h800M160 0v1000M320 0v1000M480 0v1000M640 0v1000" stroke="#caccC4" stroke-width="1" opacity=".7"/>
+  <circle cx="400" cy="330" r="142" fill="#202326"/>
+  <path d="M151 1000c14-265 97-435 249-435s235 170 249 435z" fill="#202326"/>
+  <circle cx="642" cy="172" r="115" fill="#b9f34a" opacity=".82"/>
+  <text x="48" y="70" fill="#62665f" font-family="Arial,sans-serif" font-size="16" letter-spacing="4">NAEEM PATEL / PORTRAIT</text>
+  <text x="752" y="950" fill="#62665f" font-family="Arial,sans-serif" font-size="13" text-anchor="end" letter-spacing="3">REPLACE BEFORE LAUNCH</text>
+</svg>
+
